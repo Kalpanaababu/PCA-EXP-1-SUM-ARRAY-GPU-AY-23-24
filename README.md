@@ -263,8 +263,12 @@ int main(int argc, char **argv)
 
 <img width="1649" height="173" alt="image" src="https://github.com/user-attachments/assets/fe92c2b4-3abf-436d-86ba-26a1b6605b89" />
 
+<img width="1575" height="156" alt="image" src="https://github.com/user-attachments/assets/1e72ab9b-3a2a-431f-b27c-31e1eab9ad92" />
+
 
 
 
 ## RESULT:
-Thus, Implementation of sum arrays on host and device is done in nvcc cuda using random number.
+The execution time varies because GPU performance depends on warp utilization, memory access efficiency, instruction-level parallelism, and kernel launch overhead.
+Using block.x = 1024 gives optimal warp utilization, while block.x = 1023 introduces warp inefficiency.
+Allowing each thread to process two elements reduces the number of threads and blocks, improves memory coalescing, and lowers scheduling overhead, resulting in reduced kernel execution time—provided register usage does not limit occupancy.Thus, Implementation of sum arrays on host and device is done in nvcc cuda using random number.
